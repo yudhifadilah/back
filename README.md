@@ -10,6 +10,9 @@ localhost:8080/api/notes
 GET by ID
 localhost:8080/api/id
 
+POST 
+localhost:8080/api/notes
+
 PUT 
 localhost:8080/api/notes/id
 
