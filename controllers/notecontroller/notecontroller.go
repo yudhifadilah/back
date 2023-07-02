@@ -1,8 +1,8 @@
 package notecontroller
 
 import (
-	"encoding/json"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 	"github.com/yudhifadilah/back/models"
@@ -72,24 +72,21 @@ func Update(c *gin.Context) {
 }
 
 func Delete(c *gin.Context) {
+	Id := c.Param("id")
+	//var notes models.Note
 
-	var notes models.Note
-
-	var input struct {
-		Id json.Number
-	}
-
-	if err := c.ShouldBindJSON(&input); err != nil {
-		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+	// Parse the ID into an integer
+	id, err := strconv.ParseUint(Id, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid user ID"})
 		return
 	}
 
-	id, _ := input.Id.Int64()
-	if models.DB.Delete(&notes, id).RowsAffected == 0 {
-		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"message": "Gagal Menghapus Data"})
+	// Delete the user by ID
+	if err := models.DB.Delete(&models.Note{}, id).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete data"})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"message": "Data Berhasil di Hapus"})
-
+	c.JSON(http.StatusOK, gin.H{"message": "Data deleted successfully"})
 }

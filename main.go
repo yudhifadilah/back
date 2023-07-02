@@ -14,7 +14,6 @@ func main() {
 	r.GET("/api/notes/:id", notecontroller.Show)
 	r.POST("/api/notes", notecontroller.Create)
 	r.PUT("/api/notes/:id", notecontroller.Update)
-	r.DELETE("/api/notes", notecontroller.Delete)
-
+	r.DELETE("/api/dell/:id", notecontroller.Delete)
 	r.Run()
 }
