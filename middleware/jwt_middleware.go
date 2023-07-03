@@ -18,7 +18,6 @@ import (
 // @Accept application/json
 // @Produce json
 // @Success 200 {object} model.User
-// @Router /inv/inventory/register [post]
 // Register handler
 func RegisterUser(c *gin.Context) {
 	var user models.User
@@ -61,16 +60,6 @@ func RegisterUser(c *gin.Context) {
 // @Accept application/json
 // @Produce json
 // @Success 200 {object} model.User
-// @Router /inv/inventory/login [post]
-// Login handler
-// LoginUser godoc
-// @Summary Login User.
-// @Description Login User.
-// @Tags Authentication
-// @Accept application/json
-// @Produce json
-// @Success 200 {object} model.User
-// @Router /inv/inventory/login [post]
 // Login handler
 func LoginUser(c *gin.Context) {
 	var user models.User
@@ -137,7 +126,6 @@ func LoginUser(c *gin.Context) {
 // @Accept application/json
 // @Produce json
 // @Success 200 {object} model.User
-// @Router /inv/inventory/getme/ [get]
 // GetMe handler
 func GetMe(c *gin.Context) {
 	// Mendapatkan data user yang sedang login melalui JWT token
