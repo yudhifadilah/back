@@ -1,5 +1,5 @@
 # back
- Back adalah api repositori untuk flutter
+ Back adalah api repositori untuk project assesment flutter : https://github.com/yudhifadilah/flutter-assesment
  
 DB: MYSQL
 
@@ -8,18 +8,20 @@ GET ALL
 localhost:8080/api/notes
 
 GET by ID
-localhost:8080/api/id
+localhost:8080/api/:id
 
 POST 
 localhost:8080/api/notes
 
 PUT 
-localhost:8080/api/notes/id
+localhost:8080/api/notes/:id
 
 DELETE
-localhost:8080/api/notes
-add id in json like
+localhost:8080/api/dell/:id
 
-{
- "id" : 1
-}
+# I use 
+Gin : https://github.com/gin-gonic/gin                                                                                 
+
+Gorm : https://github.com/go-gorm/gorm
+
+Gorm mysql driver : https://github.com/go-gorm/mysql
