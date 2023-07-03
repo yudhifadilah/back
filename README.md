@@ -25,3 +25,10 @@ Gin : https://github.com/gin-gonic/gin
 Gorm : https://github.com/go-gorm/gorm
 
 Gorm mysql driver : https://github.com/go-gorm/mysql
+
+# Add new Features
+
+- JWT
+- Register Feature
+- Login Feature
+- Logout Feature
