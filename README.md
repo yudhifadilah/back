@@ -29,6 +29,8 @@ Gorm mysql driver : https://github.com/go-gorm/mysql
 # Add new Features
 
 - JWT
-- Register Feature
-- Login Feature
-- Logout Feature
+- Register Feature : localhost:8080/api/user/register
+- Login Feature : localhost:8080/api/user/login
+  Username and Password
+- Logout Feature : localhost:8080/api/user/logout
+  Add Token to Auth
